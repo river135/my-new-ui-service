@@ -3,6 +3,6 @@
 .idea_modules
 .sass-cache
 target
-vendors/bourbon
-vendors/neat
+web-ui/src/main/resources/public/css/scss/vendors/bourbon
+web-ui/src/main/resources/public/css/scss/vendors/neat
 *.css
