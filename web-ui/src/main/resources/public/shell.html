@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app="loyal3UIApp">
+<head>
+  <meta charset="utf-8">
+  <title ng-bind="pageTitle"></title>
+  <link rel="stylesheet" type="text/css" href="/css/loyal3.css" />
+  <link rel="stylesheet" type="text/css" href="/css/loyal3-bootstrap.css" />
+</head>
+<body ng-controller="MainController">
+
+  <div id="main">
+    <div ng-include="'/partials/header.html'"></div>
+    <div ng-view></div>
+    <div id="push-footer"></div>
+  </div>
+  <div id="footer">
+    <div ng-include="'/partials/footer.html'"></div>
+  </div>
+
+
+  <!-- All Scripts -->
+  <script src="/lib/angular/angular.min.js"></script>
+  <script src="/lib/angular-route/angular-route.min.js"></script>
+  <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/services.js"></script>
+  <script src="/js/controllers.js"></script>
+  <script src="/js/filters.js"></script>
+  <script src="/js/directives.js"></script>
+</body>
+</html>
