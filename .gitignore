@@ -3,3 +3,6 @@
 .idea_modules
 .sass-cache
 target
+vendors/bourbon
+vendors/neat
+*.css
