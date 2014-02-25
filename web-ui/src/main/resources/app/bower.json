@@ -1,7 +1,7 @@
 {
-  "name"    : "l3-starter-project",
+  "name"    : "web-ui",
   "version" : "1.0.0",
-  "main"    : "public/css/loyal3.css",
+  "main"    : "",
   "ignore"  : [
     ".jshintrc",
     "**/*.txt"

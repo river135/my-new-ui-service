@@ -28,7 +28,9 @@ class HealthController extends Controller {
 
 object App extends FinatraServer with Logging {
   val DOCROOT = "com.twitter.finatra.config.docRoot"
+  val ASSETS  = "com.twitter.finatra.config.assetPath"
   System.setProperty(DOCROOT, "web-ui/src/main/resources")
+  System.setProperty(ASSETS, "app/")
 
   register(new HTMLController())
   register(new HealthController())

@@ -51,7 +51,7 @@ function checkForFailures(){
 
 function installBootstrapSass(){
   echo "[Bootstrap SASS]: Moving bower installed files to scss/vendors/bootstrap."
-  echo `rsync -r --exclude=bootstrap.scss public/lib/bootstrap-sass/vendor/assets/stylesheets/bootstrap/. public/css/scss/vendors/bootstrap`
+  echo `rsync -r --exclude=bootstrap.scss lib/bootstrap-sass/vendor/assets/stylesheets/bootstrap/. css/scss/vendors/bootstrap`
   echo "[Bootstrap SASS]: Uninstalling bowers install of bootstrap-sass."
   `bower uninstall bootstrap-sass`
 }
@@ -65,10 +65,10 @@ checkForFailures "$failInstall"
 echo
 cd web-ui
 echo `bundle install`
-cd src/main/resources
+cd src/main/resources/app
 echo `bower install`
 installBootstrapSass
-cd public/css/scss/vendors
+cd css/scss/vendors
 echo `bourbon install`
 echo `neat install`
 cd $PROJ_DIR

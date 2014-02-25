@@ -24,6 +24,6 @@ Other Helpful Commands
 
 ### Startup the server
 ```
-sbt 'project <project name>' run
+sbt 'project <module name>' run
 ```
 
