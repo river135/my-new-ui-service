@@ -49,9 +49,10 @@ function checkForFailures(){
   fi
 }
 
+# Move the bootstrap scss files to the vendors path because we are using bootstrap as a mixin library, not bootstrap.css
 function installBootstrapSass(){
   echo "[Bootstrap SASS]: Moving bower installed files to scss/vendors/bootstrap."
-  echo `rsync -r --exclude=bootstrap.scss lib/bootstrap-sass/vendor/assets/stylesheets/bootstrap/. css/scss/vendors/bootstrap`
+  echo `rsync -r --exclude=bootstrap.scss app/lib/bootstrap-sass/vendor/assets/stylesheets/bootstrap/. app/css/scss/vendors/bootstrap`
   echo "[Bootstrap SASS]: Uninstalling bowers install of bootstrap-sass."
   `bower uninstall bootstrap-sass`
 }
@@ -65,10 +66,10 @@ checkForFailures "$failInstall"
 echo
 cd web-ui
 echo `bundle install`
-cd src/main/resources/app
+cd src/main/resources
 echo `bower install`
 installBootstrapSass
-cd css/scss/vendors
+cd app/css/scss/vendors
 echo `bourbon install`
 echo `neat install`
 cd $PROJ_DIR
