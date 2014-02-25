@@ -18,7 +18,6 @@ scalaVersion := "2.10.2"
     libraryDependencies ++= Seq(
         "org.mockito" % "mockito-all" % "1.9.5",
         "org.specs2" %% "specs2" % "2.3.1"
-        //"org.specs2" %% "specs2" % "1.12.4.1"
     )
 }
 

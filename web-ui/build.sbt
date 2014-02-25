@@ -1,4 +1,4 @@
-name := "sms-web"
+name := "web-ui"
 
 version := "0.1"
 
