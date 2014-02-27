@@ -147,4 +147,4 @@ echo `neat install`
 
 #---===[ Generate IntelliJ Project
 cd $PROJ_DIR
-#echo `./generateIdeaProject.sh`
+./generateIdeaProject.sh
