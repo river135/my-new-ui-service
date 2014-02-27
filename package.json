@@ -1,0 +1,26 @@
+{
+  "name": "finatra-starter-project",
+  "version": "1.0.0",
+  "description": "Web UI Starter Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loyal3/finatra-angular-starter.git"
+  },
+  "author": "",
+  "dependencies": {
+    "bower": ""
+  },
+  "devDependencies": {
+    "karma-jasmine": ""
+  },
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "fed2801b3a9b15a9cecbb273499e04136850c46e",
+  "bugs": {
+    "url": "https://github.com/loyal3/finatra-angular-starter/issues"
+  }
+}

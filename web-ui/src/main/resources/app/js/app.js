@@ -1,6 +1,5 @@
 'use strict';
 
-
 // Declare app level module which depends on filters, and services
 angular.module('loyal3UIApp', [
   'ui.bootstrap',
@@ -39,6 +38,6 @@ config(['$routeProvider','$locationProvider', function($routeProvider,$locationP
 
     //Not Found
     .otherwise({
-      redirectTo: '/notfound'
+      redirectTo: '/view/404'
     });
 }]);

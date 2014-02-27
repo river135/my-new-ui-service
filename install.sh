@@ -10,20 +10,19 @@ function installMessage(){
 
   case $forName in
     Ruby)
-      message="Go the the following URL for Ruby install instructions: https://confluence.loyal3.com/display/L3/Engineering+Setup+Instructions#EngineeringSetupInstructions-RubywithRVMSetup"
+      echo "$logHeader Go the the following URL for Ruby install instructions: https://confluence.loyal3.com/display/L3/Engineering+Setup+Instructions#EngineeringSetupInstructions-RubywithRVMSetup"
       ;;
     Bundler)
-      message="To install Bundler, open a new terminal window and run 'gem install bundler'."
+      echo "$logHeader To install Bundler, open a new terminal window and run 'gem install bundler'."
       ;;
     NPM)
-      message="To install NPM, open a terminal window and run 'brew install node'."
+      echo "$logHeader To install NPM, open a terminal window and run 'brew install node'."
       ;;
     Bower)
-      message="To install Bower, open a terminal window andrun 'npm install -g bower'."
+      echo "$logHeader Installing bower via NPM..."
+      echo `sudo npm install -g bower`
       ;;
   esac
-
-  echo "$logHeader $message"
 }
 
 function confirmInstallation(){
@@ -31,13 +30,40 @@ function confirmInstallation(){
   local forName=$2
   local logHeader="[$forName Installation]: "
 
-  echo -n $installMessageHeader
   if [[ -n $currentVersionString ]]; then
     echo "$logHeader G2G."
   else
     installMessage "$logHeader" "$forName"
     failInstall=true
   fi
+}
+
+function addNpmBinPathIfNeeded(){
+  case ":$PATH:" in
+    *:/usr/local/share/npm/bin:*)
+      echo "NPM bin is already in your path."
+    ;;
+    *)
+      echo "Exporting path for npm bin, please add '/usr/local/share/npm/bin' to your bash profile."
+      export PATH=$PATH:/usr/local/share/npm/bin
+    ;;
+  esac
+}
+
+function performInstallationIfNecessary(){
+  local currentVersionString=$1
+  local forName=$2
+  local installationCommand=$3
+  local logHeader="[$forName Installation]: "
+
+  if [[ -n $currentVersionString ]]; then
+    echo "$logHeader G2G."
+  else
+    echo "$logHeader Installing.."
+    echo eval $installationCommand
+    addNpmBinPathIfNeeded
+  fi
+
 }
 
 function checkForFailures(){
@@ -57,20 +83,35 @@ function installBootstrapSass(){
   `bower uninstall bootstrap-sass`
 }
 
+#---===[ Look at required installations first
 echo
 confirmInstallation "`ruby -v`"   "Ruby"
 confirmInstallation "`bundle -v`" "Bundler"
 confirmInstallation "`npm -v`"    "NPM"
-confirmInstallation "`bower -v`"  "Bower"
+
+#---===[ Abort install if required binaries do not exist
 checkForFailures "$failInstall"
+
+#---===[ Install other necessary packages using above dependencies
+performInstallationIfNecessary "`bower -v`" "Bower" "sudo npm install -g bower"
+performInstallationIfNecessary "`karma -v`" "Bower" "sudo npm install -g karma-jasmine"
+
+#---===[ Bundle install
 echo
 cd web-ui
 echo `bundle install`
+
+#---===[ Install all project dependencies based on bower.json
 cd src/main/resources
 echo `bower install`
 installBootstrapSass
+
+#---===[ Install/Create paths for bourbon and neat
 cd app/css/scss/vendors
 echo `bourbon install`
 echo `neat install`
+
 cd $PROJ_DIR
+
+#---===[ Generate IntelliJ Project
 #echo `./generateIdeaProject.sh`

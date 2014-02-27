@@ -22,10 +22,10 @@ angular.module('loyal3UIApp.controllers', [])
     $scope.message = 'Page Not Found!';
   }])
 
-/**
- * MODAL Controllers:
- * Usage (pass the partial name to the open method)
- */
+  /**
+   * MODAL Controllers:
+   * Usage (pass the partial name to the open method)
+   */
   .controller('ModalCtrl', ['$scope', '$modal', '$log', function($scope, $modal, $log) {
     $scope.open = function (modalPartial) {
       modalPartial = (modalPartial) ? modalPartial : "generic";
