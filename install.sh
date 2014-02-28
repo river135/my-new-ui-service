@@ -87,7 +87,7 @@ function performInstallationIfNecessary(){
 ##
 # METHOD: checkForFailures
 #
-# Abort the isntall if any necessary dependencies are found missing. This is in a method to show
+# Abort the install if any necessary dependencies are found missing. This is in a method to show
 # missing dependencies at once.
 #
 function checkForFailures(){
@@ -128,6 +128,7 @@ checkForFailures "$failInstall"
 #---===[ Install other necessary packages using above dependencies
 performInstallationIfNecessary "`bower -v`" "Bower" "sudo npm install -g bower"
 performInstallationIfNecessary "`karma --version`" "Karma" "sudo npm install -g karma-jasmine"
+performInstallationIfNecessary "`sudo phantomjs -v`" "PhantomJS" "sudo npm install -g phantomjs"
 
 #---===[ Bundle Install
 echo
@@ -148,3 +149,15 @@ echo `neat install`
 #---===[ Generate IntelliJ Project
 cd $PROJ_DIR
 #echo `./generateIdeaProject.sh`
+
+#---===[ NOTES
+echo
+echo
+echo "IF PHANTOMJS WAS JUST INSTALLED: "
+echo "PhantomJS has a weird installation bug. First execution needs to be performed with sudo or Karma will not work, follow these workaround instructions:"
+echo
+echo "[Execute phantomjs via sudo and enter ctrl-d on at the phantomjs prompt]:"
+echo "   '$ sudo phantomjs'"
+echo "    phantomjs> ^D"
+echo
+echo "From now on phantom will execute without sudo. This may be able to be fixed by the way npm installs phantom."
