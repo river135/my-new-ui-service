@@ -9,8 +9,7 @@ Stack
 - Bourbon
 - Bootstrap SASS
 - Angular Bootstrap UI (Native Angular JS for Bootstrap Components)
-- Finagle on Finagle
-
+- Finatra on Finagle
 
 
 Other Helpful Commands
@@ -21,9 +20,22 @@ Other Helpful Commands
 ./install.sh
 ```
 
-
 ### Startup the server
 ```
-sbt 'project <module name>' run
+sbt 'project web-ui' run
 ```
+
+### Run Tests
+```
+cd web-ui/src/main/resources/config
+karma start karma.config.js
+```
+
+Test Locations
+--------------
+Tests are located in the following directories:
+- resources/test/e2e
+- resources/test/unit
+
+
 

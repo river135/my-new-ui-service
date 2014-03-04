@@ -24,6 +24,12 @@ object L3Build extends Build {
     base = file("web-ui")
   )
 
+  lazy val webService = Project(
+    id   = "web-service",
+    base = file("web-service")
+  )
+  .dependsOn("core")
+
   lazy val testTools = Project(
     id   = "test-tools",
     base = file("test-tools")

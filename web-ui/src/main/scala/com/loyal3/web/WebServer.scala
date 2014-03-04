@@ -26,7 +26,17 @@ class HealthController extends Controller {
   }
 }
 
-object App extends FinatraServer with Logging {
+/**
+ * NOTE: COnfiguraitons will be pulled out and into a common config file on a per environment level
+ */
+object WebServer extends FinatraServer with Logging {
+  //Configuring Port
+  val PORT = "com.twitter.finatra.config.port"
+  val ADMINPORT = "com.twitter.finatra.config.adminPort"
+  System.setProperty(PORT, ":7072")
+  System.setProperty(ADMINPORT, ":9992")
+
+  //Configuring assets location
   val DOCROOT = "com.twitter.finatra.config.docRoot"
   val ASSETS  = "com.twitter.finatra.config.assetPath"
   System.setProperty(DOCROOT, "web-ui/src/main/resources")

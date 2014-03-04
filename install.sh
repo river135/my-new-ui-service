@@ -148,16 +148,4 @@ echo `neat install`
 
 #---===[ Generate IntelliJ Project
 cd $PROJ_DIR
-#echo `./generateIdeaProject.sh`
-
-#---===[ NOTES
-echo
-echo
-echo "IF PHANTOMJS WAS JUST INSTALLED: "
-echo "PhantomJS has a weird installation bug. First execution needs to be performed with sudo or Karma will not work, follow these workaround instructions:"
-echo
-echo "[Execute phantomjs via sudo and enter ctrl-d on at the phantomjs prompt]:"
-echo "   '$ sudo phantomjs'"
-echo "    phantomjs> ^D"
-echo
-echo "From now on phantom will execute without sudo. This may be able to be fixed by the way npm installs phantom."
+./generateIdeaProject.sh

@@ -3116,3 +3116,153 @@ INF [20140225-14:16:34.749] finatra: GET /js/directives.js 200 0ms
 INF [20140225-14:16:34.789] finatra: GET /partials/header.html 200 0ms
 INF [20140225-14:16:34.790] finatra: GET /pages/section.html 200 1ms
 INF [20140225-14:16:34.791] finatra: GET /partials/footer.html 200 2ms
+INF [20140228-14:17:53.009] finatra: finatra process 69875 started
+INF [20140228-14:17:53.011] finatra: http server started on port: :7070
+INF [20140228-14:18:16.235] finatra: finatra process 70093 started
+INF [20140228-14:18:16.238] finatra: http server started on port: :7070
+INF [20140228-14:18:17.047] finatra: admin http server started on port: :9990
+INF [20140228-14:19:00.160] finatra: GET / 200 106ms
+INF [20140228-14:19:00.257] finatra: GET /css/loyal3-bootstrap.css 200 26ms
+INF [20140228-14:19:00.257] finatra: GET /css/loyal3.css 200 25ms
+INF [20140228-14:19:00.263] finatra: GET /js/controllers.js 200 0ms
+INF [20140228-14:19:00.273] finatra: GET /js/services.js 200 39ms
+INF [20140228-14:19:00.276] finatra: GET /js/filters.js 200 14ms
+INF [20140228-14:19:00.277] finatra: GET /js/app.js 200 1ms
+INF [20140228-14:19:00.284] finatra: GET /js/directives.js 200 18ms
+INF [20140228-14:19:00.370] finatra: GET /lib/angular-route/angular-route.min.js 200 136ms
+INF [20140228-14:19:00.381] finatra: GET /lib/angular-bootstrap/ui-bootstrap-tpls.min.js 200 148ms
+INF [20140228-14:19:00.382] finatra: GET /lib/angular/angular.min.js 200 151ms
+INF [20140228-14:19:00.490] finatra: GET /pages/home.html 200 0ms
+INF [20140228-14:19:00.516] finatra: GET /partials/header.html 200 28ms
+INF [20140228-14:19:00.524] finatra: GET /partials/footer.html 200 36ms
+INF [20140303-11:28:14.530] finatra: finatra process 91449 started
+INF [20140303-11:28:14.533] finatra: http server started on port: :7070
+INF [20140303-11:34:56.750] finatra: finatra process 94593 started
+INF [20140303-11:34:56.752] finatra: http server started on port: :7070
+INF [20140303-11:34:57.513] finatra: admin http server started on port: :9990
+INF [20140303-11:35:42.047] finatra: GET /ping 200 50ms
+INF [20140303-11:37:55.179] finatra: finatra process 95691 started
+INF [20140303-11:37:55.182] finatra: http server started on port: :7070
+INF [20140303-11:37:55.897] finatra: admin http server started on port: :9990
+INF [20140303-11:38:13.534] finatra: GET /ping 200 32ms
+INF [20140303-11:38:29.651] finatra: GET /plop 404 1ms
+INF [20140303-11:39:57.797] finatra: GET /api/v1/sampledata/tester 404 1ms
+INF [20140303-11:40:10.192] finatra: GET /api/v1/sampledata:tester 200 430ms
+INF [20140303-11:40:14.140] finatra: GET /api/v1/sampledata 404 0ms
+INF [20140303-15:03:07.558] finatra: GET /api/v1/sampledata 404 1ms
+INF [20140303-15:12:31.616] finatra: finatra process 97131 started
+INF [20140303-15:12:31.618] finatra: http server started on port: :7070
+INF [20140303-15:12:32.284] finatra: admin http server started on port: :9990
+INF [20140303-15:12:40.593] finatra: GET /ping 200 28ms
+INF [20140303-15:12:56.394] finatra: finatra process 97277 started
+INF [20140303-15:12:56.397] finatra: http server started on port: :7070
+INF [20140303-15:12:57.263] finatra: admin http server started on port: :9990
+INF [20140303-15:13:00.472] finatra: GET /ping 200 39ms
+INF [20140303-15:13:45.560] finatra: finatra process 97578 started
+INF [20140303-15:13:45.563] finatra: http server started on port: :7070
+INF [20140303-15:13:46.303] finatra: admin http server started on port: :9990
+INF [20140303-15:13:50.740] finatra: GET /ping 200 32ms
+INF [20140303-15:15:03.871] finatra: finatra process 98132 started
+INF [20140303-15:15:03.873] finatra: http server started on port: :7070
+INF [20140303-15:15:04.561] finatra: admin http server started on port: :9990
+INF [20140303-15:15:22.823] finatra: GET /ping 200 27ms
+INF [20140303-15:16:08.514] finatra: finatra process 98588 started
+INF [20140303-15:16:08.517] finatra: http server started on port: :7070
+INF [20140303-15:16:09.227] finatra: admin http server started on port: :9990
+INF [20140303-15:16:14.145] finatra: GET /ping 200 31ms
+INF [20140303-15:19:29.170] finatra: finatra process 99865 started
+INF [20140303-15:19:29.173] finatra: http server started on port: :7070
+INF [20140303-15:19:29.927] finatra: admin http server started on port: :9990
+INF [20140303-15:20:49.964] finatra: GET /api/v1/sampledata/param 404 30ms
+INF [20140303-15:21:27.963] finatra: GET /api/v1/sampledata/param 404 1ms
+INF [20140303-15:21:52.673] finatra: finatra process 1443 started
+INF [20140303-15:21:52.676] finatra: http server started on port: :7070
+INF [20140303-15:21:53.420] finatra: admin http server started on port: :9990
+INF [20140303-15:22:00.190] finatra: GET /api/v1/sampledata 404 56ms
+INF [20140303-15:22:47.035] finatra: finatra process 1876 started
+INF [20140303-15:22:47.038] finatra: http server started on port: :7070
+INF [20140303-15:22:47.964] finatra: admin http server started on port: :9990
+INF [20140303-15:47:16.125] finatra: GET /api/v1/sampledata 404 1443632ms
+INF [20140303-15:48:28.157] finatra: finatra process 12874 started
+INF [20140303-15:48:28.160] finatra: http server started on port: :7070
+INF [20140303-15:48:28.969] finatra: admin http server started on port: :9990
+INF [20140303-15:50:54.074] finatra: GET /api/v1/sampledata/something 404 29ms
+INF [20140303-15:52:40.745] finatra: finatra process 15000 started
+INF [20140303-15:52:40.748] finatra: http server started on port: :7070
+INF [20140303-15:52:41.482] finatra: admin http server started on port: :9990
+INF [20140303-15:52:57.727] finatra: GET /api/v1/sampledata/something 404 29ms
+INF [20140303-15:53:51.071] finatra: finatra process 15507 started
+INF [20140303-15:53:51.074] finatra: http server started on port: :7070
+INF [20140303-15:53:51.826] finatra: admin http server started on port: :9990
+INF [20140303-15:54:08.063] finatra: GET /api/v1/sampledata/something 200 5948ms
+INF [20140303-15:54:38.344] finatra: GET /api/v1/sampledata/something 200 11803ms
+INF [20140303-15:57:02.879] finatra: GET /api/v1/sampledata/something 200 1ms
+INF [20140303-15:57:06.187] finatra: GET /api/v1/sampledata/something 200 0ms
+INF [20140303-15:57:37.175] finatra: finatra process 16978 started
+INF [20140303-15:57:37.178] finatra: http server started on port: :7070
+INF [20140303-15:57:38.184] finatra: admin http server started on port: :9990
+INF [20140303-15:58:14.816] finatra: GET /api/v1/sampledata/something 200 3582ms
+INF [20140303-15:58:33.768] finatra: GET /ping 200 1ms
+INF [20140303-15:58:37.147] finatra: GET /ping 200 1ms
+INF [20140303-15:58:41.595] finatra: GET /ping 200 0ms
+INF [20140303-15:59:14.124] finatra: GET /ping 200 1ms
+INF [20140303-15:59:16.651] finatra: GET /ping 200 1ms
+INF [20140303-15:59:44.037] finatra: GET /api/v1/sampledata/something 200 1ms
+INF [20140303-15:59:54.662] finatra: GET / 404 1ms
+INF [20140303-16:00:47.496] finatra: GET /ping 200 1ms
+INF [20140303-16:01:15.063] finatra: finatra process 20640 started
+INF [20140303-16:01:15.065] finatra: http server started on port: :7070
+INF [20140303-16:01:15.762] finatra: admin http server started on port: :9990
+INF [20140303-16:01:25.578] finatra: GET /ping 200 29ms
+INF [20140303-16:01:25.607] finatra: GET /favicon.ico 404 1ms
+INF [20140303-16:02:13.952] finatra: finatra process 21025 started
+INF [20140303-16:02:13.955] finatra: http server started on port: :7070
+INF [20140303-16:02:14.827] finatra: admin http server started on port: :9990
+INF [20140303-16:02:57.421] finatra: GET /api/v1/sampledata/something 200 306ms
+INF [20140303-16:03:16.442] finatra: GET /api/v1/sampledata/something 200 2ms
+INF [20140303-16:03:56.984] finatra: finatra process 21691 started
+INF [20140303-16:03:56.987] finatra: http server started on port: :7070
+INF [20140303-16:03:57.881] finatra: admin http server started on port: :9990
+INF [20140303-16:04:07.708] finatra: GET /ping 200 33ms
+INF [20140303-17:17:15.876] finatra: finatra process 55084 started
+INF [20140303-17:17:15.879] finatra: http server started on port: :7070
+INF [20140303-17:17:16.657] finatra: admin http server started on port: :9990
+INF [20140303-17:17:23.427] finatra: GET /ping 200 32ms
+INF [20140303-17:21:33.005] finatra: finatra process 57295 started
+INF [20140303-17:21:33.009] finatra: http server started on port: :7070
+INF [20140303-17:21:33.942] finatra: admin http server started on port: :9990
+INF [20140303-17:21:51.876] finatra: GET /api/v1/sampledata/something 200 291ms
+INF [20140303-17:22:20.328] finatra: finatra process 57607 started
+INF [20140303-17:22:20.332] finatra: http server started on port: :7070
+INF [20140303-17:22:21.364] finatra: admin http server started on port: :9990
+INF [20140303-17:22:25.820] finatra: GET /api/v1/sampledata/something 200 292ms
+INF [20140303-17:23:46.477] finatra: finatra process 58237 started
+INF [20140303-17:23:46.480] finatra: http server started on port: :7070
+INF [20140303-17:23:47.172] finatra: admin http server started on port: :9990
+INF [20140303-17:23:49.530] finatra: GET /api/v1/sampledata/something 200 322ms
+INF [20140303-17:23:50.490] finatra: GET /api/v1/sampledata/something 200 1ms
+INF [20140303-17:23:51.425] finatra: GET /api/v1/sampledata/something 200 1ms
+INF [20140303-17:23:51.897] finatra: GET /api/v1/sampledata/something 200 1ms
+INF [20140303-17:23:52.249] finatra: GET /api/v1/sampledata/something 200 1ms
+INF [20140303-17:23:52.545] finatra: GET /api/v1/sampledata/something 200 1ms
+INF [20140303-17:23:52.745] finatra: GET /api/v1/sampledata/something 200 1ms
+INF [20140303-17:23:52.929] finatra: GET /api/v1/sampledata/something 200 1ms
+INF [20140303-17:30:18.641] finatra: finatra process 61458 started
+INF [20140303-17:30:18.644] finatra: http server started on port: :7070
+INF [20140303-17:30:19.390] finatra: admin http server started on port: :9990
+INF [20140303-17:34:17.046] finatra: GET /api/v1/sampledata/something 200 283ms
+INF [20140303-17:34:26.682] finatra: GET /api/v1/sampledata/something 200 2ms
+INF [20140303-17:35:30.627] finatra: GET /api/v1/sampledata/something 200 1ms
+INF [20140303-17:51:31.040] finatra: finatra process 70719 started
+INF [20140303-17:51:31.043] finatra: http server started on port: 7071
+INF [20140303-17:54:32.235] finatra: finatra process 74536 started
+INF [20140303-17:54:32.238] finatra: http server started on port: :7071
+INF [20140303-17:54:32.979] finatra: admin http server started on port: :9990
+INF [20140303-17:54:53.991] finatra: GET /api/v1/sampledata/something 200 288ms
+INF [20140303-17:54:54.041] finatra: GET /favicon.ico 404 1ms
+INF [20140303-17:56:49.175] finatra: finatra process 75437 started
+INF [20140303-17:56:49.179] finatra: http server started on port: :9991
+INF [20140303-17:56:49.907] finatra: admin http server started on port: :9990
+INF [20140303-17:57:37.943] finatra: finatra process 75761 started
+INF [20140303-17:57:37.947] finatra: http server started on port: :7071
+INF [20140303-17:57:38.651] finatra: admin http server started on port: :9991
