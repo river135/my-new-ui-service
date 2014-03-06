@@ -1,0 +1,3 @@
+[submodule "web-ui/src/main/resources/app/vault"]
+	path = web-ui/src/main/resources/app/vault
+	url = https://github.com/loyal3/vault.git

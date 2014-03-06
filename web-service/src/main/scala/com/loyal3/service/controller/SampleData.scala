@@ -10,7 +10,7 @@ import com.loyal3.service.response.SampleResponse
  */
 trait SampleData {
   def getSampleData(param: String): Option[SampleResponse] = {
-    val sr = SampleResponse(param, "some data 1", "some data 2")
+    val sr = SampleResponse(param, "This is the first line of the Sample Data", "Some more stuff down here")
     Some(sr)
   }
 

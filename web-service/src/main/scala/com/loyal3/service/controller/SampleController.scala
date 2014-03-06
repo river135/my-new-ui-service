@@ -3,6 +3,7 @@ package com.loyal3.service.controller
 import com.twitter.finatra.{Response, Controller}
 import com.loyal3.core.util.{Logging, Json}
 import com.twitter.util.Future
+import com.twitter.finagle.http.filter.JsonpFilter
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,15 +18,15 @@ class SampleController extends Controller with SampleData with Logging {
   private def notFound(s: String):Future[Response] = {
     render.body(s)
       .header("Content-Length", s.length.toString)
-      .status(404)
+      .notFound
       .toFuture
   }
 
   private def renderResponse(json: Object):Future[Response] = {
     val resp = Json.mapper.writeValueAsString(json)
-    render.body(resp)
+    render.json(json)
      .header("Content-Length", resp.length.toString)
-     .status(200)
+     .ok
      .toFuture
   }
 
@@ -38,11 +39,11 @@ class SampleController extends Controller with SampleData with Logging {
             val sampleDataResponse = getSampleData(p)
             sampleDataResponse match {
               case Some(s)  => renderResponse(s)
-              case _        =>  notFound("Not Fou")
+              case _        =>  notFound("Not Found!")
             }
           }
 
-          case _ => notFound("Not Fou")
+          case _ => notFound("Not Found!")
         }
       } catch {
         case e:Exception => {

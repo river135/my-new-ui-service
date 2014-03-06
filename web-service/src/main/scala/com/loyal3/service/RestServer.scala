@@ -2,6 +2,8 @@ package com.loyal3.service
 
 import com.twitter.finatra._
 import controller.{HealthController, SampleController}
+import com.twitter.finagle.http.filter
+import filter.JsonpFilter
 
 /**
  * Created by IntelliJ IDEA.
