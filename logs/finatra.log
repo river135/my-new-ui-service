@@ -3384,3 +3384,35 @@ INF [20140307-10:36:48.714] finatra: http server started on port: :7071
 INF [20140307-10:36:49.350] finatra: admin http server started on port: :9991
 INF [20140307-10:37:02.689] finatra: GET /ping 200 81ms
 INF [20140307-10:37:02.789] finatra: GET /favicon.ico 404 1ms
+INF [20140307-12:53:01.683] finatra: finatra process 21848 started
+INF [20140307-12:53:01.686] finatra: http server started on port: :7072
+INF [20140307-12:53:02.423] finatra: admin http server started on port: :9992
+INF [20140307-12:53:12.001] finatra: GET / 200 85ms
+INF [20140307-12:53:12.114] finatra: GET /stylesheets/loyal3.css 200 1ms
+INF [20140307-12:53:12.118] finatra: GET /javascripts/loyal3.vendor.min.js 404 1ms
+INF [20140307-12:53:12.118] finatra: GET /javascripts/loyal3.min.js 404 1ms
+INF [20140307-12:53:12.247] finatra: GET /favicon.ico 404 0ms
+INF [20140307-12:54:06.843] finatra: GET / 200 1ms
+INF [20140307-12:54:06.942] finatra: GET /stylesheets/loyal3.css 200 1ms
+INF [20140307-12:54:06.945] finatra: GET /javascripts/loyal3.vendor.min.js 404 1ms
+INF [20140307-12:54:06.945] finatra: GET /javascripts/loyal3.min.js 200 0ms
+INF [20140307-13:00:55.740] finatra: GET / 200 1ms
+INF [20140307-13:00:55.844] finatra: GET /javascripts/modernizr-2.7.1.min.js 404 0ms
+INF [20140307-13:00:55.845] finatra: GET /stylesheets/loyal3.css 200 2ms
+INF [20140307-13:00:55.846] finatra: GET /javascripts/vendor/ui-bootstrap-tpls-0.10.0.min.js 200 1ms
+INF [20140307-13:00:55.845] finatra: GET /javascripts/vendor/angular-1.2.10.min.js 200 2ms
+INF [20140307-13:00:55.855] finatra: GET /javascripts/loyal3.min.js 200 5ms
+INF [20140307-13:00:55.977] finatra: GET /javascripts/vendor/angular.min.js.map 404 1ms
+INF [20140307-13:01:10.528] finatra: GET / 200 1ms
+INF [20140307-13:01:10.614] finatra: GET /javascripts/vendor/modernizr-2.7.1.min.js 200 1ms
+INF [20140307-13:01:10.620] finatra: GET /stylesheets/loyal3.css 200 3ms
+INF [20140307-13:01:10.625] finatra: GET /javascripts/vendor/ui-bootstrap-tpls-0.10.0.min.js 200 0ms
+INF [20140307-13:01:10.625] finatra: GET /javascripts/vendor/angular-1.2.10.min.js 200 1ms
+INF [20140307-13:01:10.628] finatra: GET /javascripts/loyal3.min.js 200 0ms
+INF [20140307-13:01:10.774] finatra: GET /javascripts/vendor/angular.min.js.map 404 1ms
+INF [20140307-13:05:26.673] finatra: GET / 200 1ms
+INF [20140307-13:05:26.774] finatra: GET /stylesheets/loyal3.css 200 0ms
+INF [20140307-13:05:26.779] finatra: GET /javascripts/vendor/angular-1.2.10.min.js 200 0ms
+INF [20140307-13:05:26.780] finatra: GET /javascripts/vendor/ui-bootstrap-tpls-0.10.0.min.js 200 2ms
+INF [20140307-13:05:26.782] finatra: GET /javascripts/loyal3.min.js 200 3ms
+INF [20140307-13:05:26.900] finatra: GET /javascripts/vendor/angular.min.js.map 404 0ms
