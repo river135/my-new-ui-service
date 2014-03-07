@@ -25,14 +25,11 @@ angular.module('loyal3UIApp.controllers', [])
     $scope.message = 'Check Out the Main Controller!';
   }])
 
-  .controller('SampleComponentController', ['$scope', '$http', '$log', function($scope, $http, $log) {
-    $log.info("We're in this method!");
-    $http.get('/api/sample/helloworld').success(function(data) {
-      $log.info("Data: "+print_r(data));
-      $scope.paramDynamic = data.paramDynamic;
-      $scope.param2 = data.param2;
-      $scope.param3 = data.param3;
-    });
+  .controller('SampleComponentController', ['$scope', 'SampleService', '$log', function($scope, SampleService, $log) {
+    $scope.sampleData = null;
+    SampleService.get("HelloWorld", function(data) {
+      $scope.sampleData = data;
+    })
   }])
 
   /**
