@@ -1,5 +1,19 @@
 'use strict';
 
+var print_r = function(o){
+  var str='';
+
+  for(var p in o){
+    if(typeof o[p] == 'string'){
+      str+= p + ': ' + o[p]+'; \n';
+    }else{
+      str+= p + ': { \n' + print(o[p]) + '}';
+    }
+  }
+
+  return str;
+}
+
 // Declare app level module which depends on filters, and services
 angular.module('loyal3UIApp', [
   'ui.bootstrap',

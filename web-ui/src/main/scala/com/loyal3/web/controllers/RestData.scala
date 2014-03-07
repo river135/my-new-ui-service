@@ -10,8 +10,8 @@ import com.loyal3.web.response.SampleResponse
  */
 trait RestData {
   def getSampleData(param: String):Option[SampleResponse] = {
-    val param2 = "%s: param2".format(param)
-    val param3 = "%s: param3".format(param)
+    val param2 = "param2"
+    val param3 = "param3"
 
     Some(SampleResponse(param, param2, param3))
   }
