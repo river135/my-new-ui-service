@@ -6,11 +6,10 @@
     ".jshintrc",
     "**/*.txt"
   ],
-  
   "dependencies" : {
     "angular-bootstrap" : "0.10.0",
     "angular-route"     : "1.2.13",
-    "bootstrap-sass"    : "https://github.com/twbs/bootstrap-sass/archive/v3.1.1.zip"
+    "modernizr"         : "2.7.1"
   },
 
   "devDependencies" : {

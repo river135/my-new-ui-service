@@ -24,12 +24,14 @@ gulp.task('sass', function() {
 });
 
 // concat vendor scripts
-// TODO: decide if we actually want to do this
-//gulp.task('js-vendor-package', function() {
-//    return gulp.src(appResourcePath + 'javascripts/vendor/*.js')
-//        .pipe(concat('loyal3.vendor.min.js'))
-//        .pipe(gulp.dest(appResourcePath + 'javascripts'));
-//});
+gulp.task('js-vendor-package', function() {
+    // order matters
+    return gulp.src([appResourcePath + 'vendor/angular/angular.min.js',
+                     appResourcePath + 'vendor/angular-route/angular-route.min.js',
+                     appResourcePath + 'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js'])
+        .pipe(concat('loyal3.vendor.min.js'))
+        .pipe(gulp.dest(appResourcePath + 'javascripts/vendor'));
+});
 
 // minify
 gulp.task('minify', function() {

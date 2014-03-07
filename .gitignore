@@ -6,7 +6,5 @@ target
 logs/*
 node_modules
 */node_modules
-web-ui/src/main/resources/app/lib/*
-web-ui/src/main/resources/app/css/scss/vendors/*
-!web-ui/src/main/resources/app/css/scss/vendors/.empty
-!web-ui/src/main/resources/app/lib/.empty
+*/vendor
+*/vendor/*
