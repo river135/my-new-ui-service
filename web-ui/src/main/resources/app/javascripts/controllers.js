@@ -3,10 +3,7 @@
 /* Controllers */
 
 angular.module('loyal3UIApp.controllers', [])
-  .controller('MainController', ['$scope', '$log', '$location', function($scope, $log, $location) {
-    $scope.message = 'Check Out the Main Controller!';
-  }])
-
+  //Page Level Controllers (Handles titles, etc..)
   .controller('HomeController', ['$rootScope', '$scope', function($rootScope, $scope) {
     $rootScope.pageTitle = "Homepage";
     $scope.message = 'This is the Home Page!';
@@ -20,6 +17,22 @@ angular.module('loyal3UIApp.controllers', [])
   .controller('NotFoundController', ['$rootScope', '$scope', function($rootScope, $scope) {
     $rootScope.pageTitle = "Not Found!";
     $scope.message = 'Page Not Found!';
+  }])
+
+
+  //Component Controllers (may want to split these into 2 separate files)
+  .controller('MainController', ['$scope', '$log', '$location', function($scope, $log, $location) {
+    $scope.message = 'Check Out the Main Controller!';
+  }])
+
+  .controller('SampleComponentController', ['$scope', '$http', '$log', function($scope, $http, $log) {
+    $log.info("We're in this method!");
+    $http.get('/api/sample/helloworld').success(function(data) {
+      $log.info("Data: "+print_r(data));
+      $scope.paramDynamic = data.paramDynamic;
+      $scope.param2 = data.param2;
+      $scope.param3 = data.param3;
+    });
   }])
 
   /**

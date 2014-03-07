@@ -23,5 +23,6 @@ object WebServer extends FinatraServer with Logging {
   System.setProperty("com.twitter.finatra.config.assetPath", "app/")
 
   register(new HTMLController())
+  register(new RestController())
   register(new HealthController())
 }
