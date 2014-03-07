@@ -12,7 +12,14 @@ var print_r = function(o){
   }
 
   return str;
-}
+};
+
+String.prototype.format = function() {
+  var arg = arguments;
+  var i = 0;
+  return this.replace(/%((%)|s)/g, function (m) { return m[2] || arg[i++] })
+};
+
 
 // Declare app level module which depends on filters, and services
 angular.module('loyal3UIApp', [
