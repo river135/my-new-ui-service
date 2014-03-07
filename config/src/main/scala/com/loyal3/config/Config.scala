@@ -1,4 +1,4 @@
-package com.loyal3.sms.config
+package com.loyal3.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
