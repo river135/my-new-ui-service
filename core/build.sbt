@@ -18,8 +18,8 @@ resolvers += "Twitter Repo" at "http://maven.twttr.com/"
 
 {
     libraryDependencies ++= Seq(
-        "com.twitter" % "finatra" % "1.4.0",
-        "com.twitter" %% "twitter-server" % "1.0.2"
+        "com.twitter" %% "finatra" % "1.5.2",
+        "com.twitter" %% "twitter-server" % "1.4.1"
     )
 }
 

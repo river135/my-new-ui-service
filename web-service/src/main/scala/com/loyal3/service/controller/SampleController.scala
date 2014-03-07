@@ -1,9 +1,7 @@
 package com.loyal3.service.controller
 
-import com.twitter.finatra.{Response, Controller}
-import com.loyal3.core.util.{Logging, Json}
-import com.twitter.util.Future
-import com.twitter.finagle.http.filter.JsonpFilter
+import com.twitter.finatra.Controller
+import com.loyal3.core.util.Logging
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,21 +13,6 @@ import com.twitter.finagle.http.filter.JsonpFilter
  *
  */
 class SampleController extends Controller with SampleData with Logging {
-  private def notFound(s: String):Future[Response] = {
-    render.body(s)
-      .header("Content-Length", s.length.toString)
-      .notFound
-      .toFuture
-  }
-
-  private def renderResponse(json: Object):Future[Response] = {
-    val resp = Json.mapper.writeValueAsString(json)
-    render.json(json)
-     .header("Content-Length", resp.length.toString)
-     .ok
-     .toFuture
-  }
-
   get("/api/v1/sampledata/:param") {
     request => {
       try {
@@ -38,12 +21,12 @@ class SampleController extends Controller with SampleData with Logging {
           case Some(p) => {
             val sampleDataResponse = getSampleData(p)
             sampleDataResponse match {
-              case Some(s)  => renderResponse(s)
-              case _        =>  notFound("Not Found!")
+              case Some(s)  => render.json(s).ok.toFuture
+              case _        => render.notFound.toFuture
             }
           }
 
-          case _ => notFound("Not Found!")
+          case _ => render.notFound.toFuture
         }
       } catch {
         case e:Exception => {

@@ -3266,3 +3266,121 @@ INF [20140303-17:56:49.907] finatra: admin http server started on port: :9990
 INF [20140303-17:57:37.943] finatra: finatra process 75761 started
 INF [20140303-17:57:37.947] finatra: http server started on port: :7071
 INF [20140303-17:57:38.651] finatra: admin http server started on port: :9991
+INF [20140305-16:16:58.976] finatra: finatra process 74323 started
+INF [20140305-16:16:58.979] finatra: http server started on port: :7072
+INF [20140305-16:16:59.915] finatra: admin http server started on port: :9992
+INF [20140305-16:17:17.626] finatra: GET / 200 203ms
+INF [20140305-16:17:17.668] finatra: GET /js/app.js 200 7ms
+INF [20140305-16:17:17.674] finatra: GET /css/loyal3-bootstrap.css 200 17ms
+INF [20140305-16:17:17.676] finatra: GET /css/loyal3.css 200 18ms
+INF [20140305-16:17:17.677] finatra: GET /js/controllers.js 200 1ms
+INF [20140305-16:17:17.693] finatra: GET /js/services.js 200 21ms
+INF [20140305-16:17:17.695] finatra: GET /js/directives.js 200 15ms
+INF [20140305-16:17:17.695] finatra: GET /js/filters.js 200 15ms
+INF [20140305-16:17:17.706] finatra: GET /lib/angular-route/angular-route.min.js 200 46ms
+INF [20140305-16:17:17.718] finatra: GET /lib/angular-bootstrap/ui-bootstrap-tpls.min.js 200 51ms
+INF [20140305-16:17:17.718] finatra: GET /lib/angular/angular.min.js 200 60ms
+INF [20140305-16:17:17.803] finatra: GET /pages/home.html 200 0ms
+INF [20140305-16:17:17.818] finatra: GET /partials/footer.html 200 17ms
+INF [20140305-16:17:17.827] finatra: GET /partials/header.html 200 23ms
+INF [20140305-16:17:23.651] finatra: GET /partials/modals/generic.html 200 17ms
+INF [20140305-17:40:45.544] finatra: finatra process 16557 started
+INF [20140305-17:40:45.548] finatra: http server started on port: :7072
+INF [20140305-17:42:05.758] finatra: finatra process 17078 started
+INF [20140305-17:42:05.761] finatra: http server started on port: :7072
+INF [20140305-17:42:06.525] finatra: admin http server started on port: :9992
+INF [20140305-17:42:27.012] finatra: GET /view/ 200 140ms
+INF [20140305-17:42:27.095] finatra: GET /css/loyal3.css 200 11ms
+INF [20140305-17:42:27.095] finatra: GET /css/loyal3-bootstrap.css 200 16ms
+INF [20140305-17:42:27.107] finatra: GET /lib/angular-route/angular-route.min.js 200 21ms
+INF [20140305-17:42:27.118] finatra: GET /lib/angular-bootstrap/ui-bootstrap-tpls.min.js 200 37ms
+INF [20140305-17:42:27.119] finatra: GET /lib/angular/angular.min.js 200 36ms
+INF [20140305-17:42:50.890] finatra: GET / 200 1ms
+INF [20140305-17:42:50.904] finatra: GET /css/loyal3.css 200 1ms
+INF [20140305-17:42:50.909] finatra: GET /css/loyal3-bootstrap.css 200 1ms
+INF [20140305-17:42:50.909] finatra: GET /lib/angular/angular.min.js 200 0ms
+INF [20140305-17:42:50.912] finatra: GET /lib/angular-bootstrap/ui-bootstrap-tpls.min.js 200 0ms
+INF [20140305-17:42:50.915] finatra: GET /lib/angular-route/angular-route.min.js 200 0ms
+INF [20140305-17:43:33.697] finatra: GET / 200 1ms
+INF [20140305-17:43:33.708] finatra: GET /css/loyal3.css 200 1ms
+INF [20140305-17:43:33.708] finatra: GET /lib/angular-route/angular-route.min.js 200 1ms
+INF [20140305-17:43:33.712] finatra: GET /css/loyal3-bootstrap.css 200 5ms
+INF [20140305-17:43:33.714] finatra: GET /lib/angular-bootstrap/ui-bootstrap-tpls.min.js 200 0ms
+INF [20140305-17:43:33.714] finatra: GET /lib/angular/angular.min.js 200 1ms
+INF [20140305-17:43:56.723] finatra: GET /view/section.html 200 1ms
+INF [20140305-17:43:56.734] finatra: GET /css/loyal3-bootstrap.css 200 0ms
+INF [20140305-17:43:56.734] finatra: GET /lib/angular/angular.min.js 200 1ms
+INF [20140305-17:43:56.734] finatra: GET /lib/angular-bootstrap/ui-bootstrap-tpls.min.js 200 1ms
+INF [20140305-17:43:56.734] finatra: GET /css/loyal3.css 200 0ms
+INF [20140305-17:43:56.736] finatra: GET /lib/angular-route/angular-route.min.js 200 1ms
+INF [20140305-17:44:00.210] finatra: GET /view/section 200 1ms
+INF [20140305-17:44:00.218] finatra: GET /js/app.js 200 8ms
+INF [20140305-17:44:00.220] finatra: GET /lib/angular-route/angular-route.min.js 200 0ms
+INF [20140305-17:44:00.220] finatra: GET /css/loyal3-bootstrap.css 200 1ms
+INF [20140305-17:44:00.220] finatra: GET /css/loyal3.css 200 1ms
+INF [20140305-17:44:00.220] finatra: GET /lib/angular/angular.min.js 200 1ms
+INF [20140305-17:44:00.224] finatra: GET /lib/angular-bootstrap/ui-bootstrap-tpls.min.js 200 3ms
+INF [20140305-17:44:29.647] finatra: GET /api/sample/tester 404 1ms
+INF [20140305-17:45:02.208] finatra: finatra process 18227 started
+INF [20140305-17:45:02.211] finatra: http server started on port: :7072
+INF [20140305-17:45:02.863] finatra: admin http server started on port: :9992
+INF [20140305-17:45:33.918] finatra: GET /api/sample/tester 200 462ms
+INF [20140305-17:45:52.282] finatra: GET /ping 200 1ms
+INF [20140305-18:01:55.086] finatra: GET / 200 51ms
+INF [20140305-18:01:55.103] finatra: GET /lib/angular-route/angular-route.min.js 200 4ms
+INF [20140305-18:01:55.103] finatra: GET /lib/angular-bootstrap/ui-bootstrap-tpls.min.js 200 3ms
+INF [20140305-18:01:55.104] finatra: GET /css/loyal3-bootstrap.css 200 0ms
+INF [20140305-18:01:55.104] finatra: GET /lib/angular/angular.min.js 200 1ms
+INF [20140305-18:01:55.107] finatra: GET /css/loyal3.css 200 10ms
+INF [20140305-18:02:29.099] finatra: finatra process 27193 started
+INF [20140305-18:02:29.103] finatra: http server started on port: :7072
+INF [20140305-18:02:29.812] finatra: admin http server started on port: :9992
+INF [20140305-18:03:43.549] finatra: finatra process 27646 started
+INF [20140305-18:03:43.552] finatra: http server started on port: :7072
+INF [20140305-18:03:44.284] finatra: admin http server started on port: :9992
+INF [20140305-18:04:14.453] finatra: GET / 200 77ms
+INF [20140305-18:04:14.480] finatra: GET /css/loyal3.css 200 0ms
+INF [20140305-18:04:14.486] finatra: GET /lib/angular-route/angular-route.min.js 200 1ms
+INF [20140305-18:04:14.485] finatra: GET /lib/angular-bootstrap/ui-bootstrap-tpls.min.js 200 4ms
+INF [20140305-18:04:14.486] finatra: GET /css/loyal3-bootstrap.css 200 3ms
+INF [20140305-18:04:14.486] finatra: GET /lib/angular/angular.min.js 200 0ms
+INF [20140307-10:22:31.142] finatra: finatra process 39366 started
+INF [20140307-10:22:31.145] finatra: http server started on port: :7072
+INF [20140307-10:22:31.809] finatra: admin http server started on port: :9992
+INF [20140307-10:22:35.595] finatra: GET / 200 104ms
+INF [20140307-10:22:35.646] finatra: GET /css/loyal3-bootstrap.css 200 25ms
+INF [20140307-10:22:35.649] finatra: GET /css/loyal3.css 200 29ms
+INF [20140307-10:22:35.665] finatra: GET /js/services.js 200 16ms
+INF [20140307-10:22:35.676] finatra: GET /js/controllers.js 200 24ms
+INF [20140307-10:22:35.679] finatra: GET /js/app.js 200 59ms
+INF [20140307-10:22:35.694] finatra: GET /lib/angular-route/angular-route.min.js 200 75ms
+INF [20140307-10:22:35.709] finatra: GET /js/directives.js 200 31ms
+INF [20140307-10:22:35.709] finatra: GET /js/filters.js 200 42ms
+INF [20140307-10:22:35.750] finatra: GET /lib/angular-bootstrap/ui-bootstrap-tpls.min.js 200 129ms
+INF [20140307-10:22:35.750] finatra: GET /lib/angular/angular.min.js 200 129ms
+INF [20140307-10:22:35.974] finatra: GET /partials/footer.html 200 156ms
+INF [20140307-10:22:35.974] finatra: GET /partials/header.html 200 154ms
+INF [20140307-10:22:35.994] finatra: GET /pages/home.html 200 175ms
+INF [20140307-10:24:28.480] finatra: finatra process 40273 started
+INF [20140307-10:24:28.482] finatra: http server started on port: :7071
+INF [20140307-10:24:29.200] finatra: admin http server started on port: :9991
+INF [20140307-10:24:34.648] finatra: GET / 404 26ms
+INF [20140307-10:24:38.863] finatra: GET /ping 200 11ms
+INF [20140307-10:26:42.275] finatra: finatra process 41123 started
+INF [20140307-10:26:42.279] finatra: http server started on port: :7072
+INF [20140307-10:26:43.161] finatra: admin http server started on port: :9992
+INF [20140307-10:26:47.742] finatra: GET /ping 200 36ms
+INF [20140307-10:27:17.231] finatra: finatra process 41368 started
+INF [20140307-10:27:17.235] finatra: http server started on port: :7071
+INF [20140307-10:27:18.120] finatra: admin http server started on port: :9991
+INF [20140307-10:27:23.896] finatra: GET /ping 200 33ms
+INF [20140307-10:32:45.562] finatra: finatra process 44033 started
+INF [20140307-10:32:45.565] finatra: http server started on port: :7071
+INF [20140307-10:32:46.214] finatra: admin http server started on port: :9991
+INF [20140307-10:32:53.170] finatra: GET /ping 404 27ms
+INF [20140307-10:32:58.286] finatra: GET /health 200 11ms
+INF [20140307-10:36:48.711] finatra: finatra process 45602 started
+INF [20140307-10:36:48.714] finatra: http server started on port: :7071
+INF [20140307-10:36:49.350] finatra: admin http server started on port: :9991
+INF [20140307-10:37:02.689] finatra: GET /ping 200 81ms
+INF [20140307-10:37:02.789] finatra: GET /favicon.ico 404 1ms

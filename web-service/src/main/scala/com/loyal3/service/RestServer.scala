@@ -15,10 +15,8 @@ import filter.JsonpFilter
  * NOTE: Configurations will be pulled out and into a common config file on a per environment level
  */
 object RestServer extends FinatraServer with Logging {
-  val PORT = "com.twitter.finatra.config.port"
-  val ADMINPORT = "com.twitter.finatra.config.adminPort"
-  System.setProperty(PORT, ":7071")
-  System.setProperty(ADMINPORT, ":9991")
+  System.setProperty("com.twitter.finatra.config.port", ":7071")
+  System.setProperty("com.twitter.finatra.config.adminPort", ":9991")
 
   register(new SampleController())
   register(new HealthController())
