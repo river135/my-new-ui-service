@@ -1,17 +1,15 @@
 LOYAL3 Starter Project
 =============================================
-This is a basic starter kit project for Loyal3 UI components. Fork This project and make any changes necessary. If any changes are made that would be valuable to pull back to the
-core project, please checkout the main starter app and make changes there.
+This is a thin-ish starter for a Finatra/Angular project service at LOYAL3. Clone this project and make any changes
+necessary. If any changes are made that would be valuable to pull back to this starter project, please checkout the main
+starter app and make changes there.
 
 Stack
 -----
-- AngularJS
-- Neat (for grid)
-- Bourbon
-- Bootstrap SASS
-- Angular Bootstrap UI (Native Angular JS for Bootstrap Components)
-- Finatra on Finagle
-
+- [Finatra](http://finatra.info/) on [Finagle](http://twitter.github.io/finagle/)
+- [AngularJS](http://angularjs.org/)
+- [Angular Bootstrap UI](http://angular-ui.github.io/bootstrap/) (Native Angular for Twitter Bootstrap)
+- [Vault](https://github.com/loyal3/vault)
 
 Other Helpful Commands
 ----------------------
@@ -43,6 +41,3 @@ UI tests are located in the following directories:
 
 - resources/test/e2e
 - resources/test/unit
-
-
-
