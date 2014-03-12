@@ -2,25 +2,16 @@ package com.loyal3.web
 
 import com.twitter.finatra._
 import controllers.{RestController, HealthController, HTMLController}
+import com.loyal3.config.Config
 
-/**
- * Created by IntelliJ IDEA.
- * User: chrisg
- * Date: 2/14/14
- * Time: 3:16 PM
- */
-
-/**
- * NOTE: Configuraitons will be pulled out and into a common config file on a per environment level
- */
 object WebServer extends FinatraServer with Logging {
   //Configuring Port
-  System.setProperty("com.twitter.finatra.config.port", ":7072")
-  System.setProperty("com.twitter.finatra.config.adminPort", ":9992")
+  System.setProperty("com.twitter.finatra.config.port", Config.WebServerPort)
+  System.setProperty("com.twitter.finatra.config.adminPort", Config.AdminServerPort)
 
   //Configuring assets location
-  System.setProperty("com.twitter.finatra.config.docRoot", "web-ui/src/main/resources")
-  System.setProperty("com.twitter.finatra.config.assetPath", "app/")
+  System.setProperty("com.twitter.finatra.config.docRoot", Config.WebDocumentRoot)
+  System.setProperty("com.twitter.finatra.config.assetPath", Config.WebAssetPath)
 
   register(new HTMLController())
   register(new RestController())

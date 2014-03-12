@@ -1,31 +1,35 @@
 package com.loyal3.config
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import java.net.URL
-
-case class Config(database: DatabaseConfig)
+import com.twitter.finatra.{config => twitterConfig}
+import com.netflix.config.scala._
+import com.netflix.config.{SimpleDeploymentContext, ConfigurationManager, DynamicPropertyFactory}
 
 object Config {
-  val mapper = {
-    val m: ObjectMapper = new ObjectMapper
-    m.registerModule(DefaultScalaModule)
-    m
-  }
+  val DefaultPropertiesName: String = "starter" // base name for properties files
+  loadCascadedPropertiesFor(DefaultPropertiesName)
 
-  lazy val current: Config = {
-    val env: String = System.getProperty("loyal3.env", "default")
-    val resource: URL = getClass.getClassLoader.getResource("config/%s.json" format env)
-    val value: Config = mapper.readValue(resource, classOf[Config])
-    if (value == null) {
-      throw new RuntimeException("no configuration found for environment, %s" format env)
-    }
-    value
+  val Properties = DynamicPropertyFactory.getInstance()
+
+  /**
+   * Finatra Web Server Properties
+   */
+  val WebServerPort   = Properties.getStringProperty("web.port", ":7070").get
+  val WebDocumentRoot = Properties.getStringProperty("web.documentRoot", "web-ui/src/main/resources").get
+  val WebAssetPath    = Properties.getStringProperty("web.assetPath", "app/").get
+
+  /**
+   * Finatra/Twitter-Server Admin Properties
+   */
+  val AdminServerPort = DynamicProperties.dynamicStringProperty("admin.port", ":9090").get
+
+  // do the Archaius Stuff based on our environment
+  private def loadCascadedPropertiesFor(propertiesBaseName: String) {
+    val environment: String = twitterConfig.env() // finatra environment property
+
+    val deploymentContext = new SimpleDeploymentContext
+    deploymentContext.setDeploymentEnvironment(environment)
+
+    ConfigurationManager.setDeploymentContext(deploymentContext)
+    ConfigurationManager.loadCascadedPropertiesFromResources(propertiesBaseName)
   }
 }
-
-case class DatabaseConfig(url: String,
-                          username: String,
-                          password: String,
-                          maxConnections: Int = 4,
-                          minConnections: Int = 2)
