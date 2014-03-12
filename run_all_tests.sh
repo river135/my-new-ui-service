@@ -13,11 +13,16 @@ shopt -s expand_aliases
 
 echo Run all unit tests, integration tests and functional tests
 
+export PATH=$PATH:/usr/local/bin
+
+echo $PATH
+
 sbt project\ config test\
  project\ util test\
  project\ web-ui test\
  project\ web-ui-integration-tests test\
  project\ web-ui-functional-tests test\
+ project\ web-service test\
  project\ web-service-integration-tests test\
  project\ web-service-functional-tests test\
 
