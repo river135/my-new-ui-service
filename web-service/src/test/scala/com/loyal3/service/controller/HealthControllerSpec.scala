@@ -12,7 +12,7 @@ class HealthControllerSpec extends FlatSpecHelper {
 
   }
 
-  "GET sample data with no parameter" should "respond 404" in {
+  "GET healthcheck" should "respond pong" in {
     get("/ping")
     response.code should equal (200)
     response.body should equal ("pong")
