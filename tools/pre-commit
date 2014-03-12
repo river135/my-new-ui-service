@@ -4,8 +4,7 @@
 # exit with non-zero status after issuing an appropriate message if it wants to stop the commit.
 #
 
-test_script="../../run_all_tests.sh"
-chmod a+x $test_script
-sh $test_script
+sh ./tools/run_all_tests.sh
+exit $?
 
 

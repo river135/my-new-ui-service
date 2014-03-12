@@ -63,6 +63,7 @@ object L3Build extends Build {
 
   lazy val webUIFunctionalTests = Project(id = "web-ui-functional-tests",
     base = file("web-ui-functional-tests"))
+  .dependsOn(webUi % "test->compile;")
 
 
   /************************ Code Coverage *********************************************/

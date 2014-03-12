@@ -6,8 +6,6 @@
 # Usage: run_all_tests
 #
 
-
-
 # Configure sbt to print mono text only
 shopt -s expand_aliases
 
