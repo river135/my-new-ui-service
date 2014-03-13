@@ -2,6 +2,7 @@ package com.loyal3.service.controller
 
 import com.twitter.finatra.test.FlatSpecHelper
 import com.twitter.finatra._
+import com.loyal3.controller.SampleController
 
 class SampleControllerSpec extends FlatSpecHelper {
   val server = new FinatraServer

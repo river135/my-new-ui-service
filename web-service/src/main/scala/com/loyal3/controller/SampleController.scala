@@ -1,4 +1,4 @@
-package com.loyal3.service.controller
+package com.loyal3.controller
 
 import com.twitter.finatra.Controller
 import com.loyal3.core.util.Logging

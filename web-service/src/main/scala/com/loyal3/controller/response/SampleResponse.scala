@@ -1,4 +1,4 @@
-package com.loyal3.service.response
+package com.loyal3.controller.response
 
 /**
  * Created by IntelliJ IDEA.

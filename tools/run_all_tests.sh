@@ -15,14 +15,7 @@ export PATH=$PATH:/usr/local/bin
 
 echo $PATH
 
-sbt project\ config test\
- project\ util test\
- project\ web-ui test\
- project\ web-ui-integration-tests test\
- project\ web-ui-functional-tests test\
- project\ web-service test\
- project\ web-service-integration-tests test\
- project\ web-service-functional-tests test\
+sbt test
 
 if [ "$?" -ne 0 ]; then
     echo "one or more tests failed";

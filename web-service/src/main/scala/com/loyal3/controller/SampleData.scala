@@ -1,6 +1,6 @@
-package com.loyal3.service.controller
+package com.loyal3.controller
 
-import com.loyal3.service.response.SampleResponse
+import response.SampleResponse
 
 /**
  * Created by IntelliJ IDEA.

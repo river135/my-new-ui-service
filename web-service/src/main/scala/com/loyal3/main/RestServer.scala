@@ -1,9 +1,8 @@
-package com.loyal3.service
+package com.loyal3.main
 
 import com.twitter.finatra._
-import controller.{HealthController, SampleController}
-import com.twitter.finagle.http.filter
-import filter.JsonpFilter
+import com.loyal3.service.HealthCheckServiceImpl
+import com.loyal3.controller.{HealthCheckController, SampleController}
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,5 +18,7 @@ object RestServer extends FinatraServer with Logging {
   System.setProperty("com.twitter.finatra.config.adminPort", ":9991")
 
   register(new SampleController())
-  register(new HealthController())
+
+  val healthService = new HealthCheckServiceImpl
+  register(new HealthCheckController(healthService))
 }
