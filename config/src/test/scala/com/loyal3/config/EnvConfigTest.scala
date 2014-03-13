@@ -1,14 +1,13 @@
 package com.loyal3.config
 
-import org.scalatest.FunSuite
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.{Matchers, FunSuite}
 import java.util.Properties
 import scala.collection.JavaConversions._
 
 
 class EnvConfigTest
   extends FunSuite
-  with ShouldMatchers {
+  with Matchers {
 
   val EnvironmentSpecificConfigs: List[String] = List(
     "web.port",
