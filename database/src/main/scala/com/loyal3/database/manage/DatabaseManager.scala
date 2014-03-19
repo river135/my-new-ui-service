@@ -63,7 +63,7 @@ final case class Database(systemUrl:String,     // => example: jdbc:mysql://loca
 
 object DatabaseManager {
 
-  lazy val dbProperties: DBProperties = Config.dbProperties
+  lazy val dbProperties: DBProperties = Config.DbProperties
 
   val systemUrl = (url: String) => (url.split("/").reverse.tail.reverse :+ "mysql").mkString("/")
 

@@ -2,10 +2,6 @@ name := "config"
 
 version := "0.1"
 
-organization := "com.loyal3"
-
-scalaVersion := "2.10.3"
-
 libraryDependencies ++= Seq(
   "com.netflix.archaius" % "archaius-core" % "0.6.0",
   "com.netflix.archaius" % "archaius-scala" % "0.6.0",

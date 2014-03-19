@@ -1,11 +1,13 @@
 import sbt._
+import Keys._
 
 object L3Build extends Build {
   lazy val all: Project = Project(
     id   = "all",
     base = file("."),
     settings = Defaults.defaultSettings ++
-      Seq(ScctPlugin.mergeReportSettings: _*)
+      Seq(ScctPlugin.mergeReportSettings: _*) ++
+      Seq(shellPrompt := Common.buildShellPrompt)
   )
   .aggregate(config,
     util,
@@ -23,14 +25,14 @@ object L3Build extends Build {
   lazy val config = Project(
     id   = "config",
     base = file("config"),
-    settings = scctSettings
+    settings = projectSettings
   )
   .dependsOn(testTools % "test->compile;")
 
   lazy val util = Project(
     id   = "util",
     base = file("util"),
-    settings = scctSettings
+    settings = projectSettings
   )
   .dependsOn(testTools % "test->compile;", config)
 
@@ -42,25 +44,25 @@ object L3Build extends Build {
   lazy val database = Project(
     id = "database",
     base = file("database"),
-    settings = scctSettings
+    settings = projectSettings
   )
-  .dependsOn(config, testTools)
+  .dependsOn(config, testTools % "test->compile;")
 
   lazy val databaseTests = Project(
     id = "database-tests",
     base = file("database-tests"),
-    settings = scctSettings
+    settings = projectSettings
   )
-  .dependsOn(database)
+  .dependsOn(database % "test->compile;test->test;")
 
   /************************ UI *****************************************/
 
   lazy val webUi = Project(
     id   = "web-ui",
     base = file("web-ui"),
-    settings = scctSettings
+    settings = projectSettings
   )
-  .dependsOn("util")
+  .dependsOn(util, testTools % "test->compile;")
 
   lazy val webUIIntegrationTests = Project(
     id = "web-ui-integration-tests",
@@ -77,9 +79,9 @@ object L3Build extends Build {
   lazy val webService = Project(
     id   = "web-service",
     base = file("web-service"),
-    settings = scctSettings
+    settings = projectSettings
   )
-  .dependsOn("util")
+  .dependsOn("util", testTools % "test->compile;")
 
   lazy val webServiceIntegrationTests = Project(
     id = "web-service-integration-tests",
@@ -93,7 +95,22 @@ object L3Build extends Build {
 
 
   /************************ Code Coverage *********************************************/
-  lazy val scctSettings = Defaults.defaultSettings ++ Seq(ScctPlugin.instrumentSettings: _*)
+  lazy val projectSettings = Defaults.defaultSettings ++ Seq(ScctPlugin.instrumentSettings: _*) ++ Common.settings
+}
+
+object Common {
+  val buildShellPrompt = {
+    (state: State) => {
+      val currProject = Project.extract (state).currentProject.id
+      "[%s]> ".format(currProject)
+    }
+  }
+
+  val settings = Seq(
+    organization := "com.loyal3",
+    scalaVersion := "2.10.2",
+    shellPrompt := buildShellPrompt
+  )
 }
 
 

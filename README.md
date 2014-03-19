@@ -10,6 +10,9 @@ Stack
 - [AngularJS](http://angularjs.org/)
 - [Angular Bootstrap UI](http://angular-ui.github.io/bootstrap/) (Native Angular for Twitter Bootstrap)
 - [Vault](https://github.com/loyal3/vault)
+- [BoneCP](http://jolbox.com/)
+- [Jdbi](http://jdbi.org/)
+- [Liquibase](http://www.liquibase.org/)
 
 Other Helpful Commands
 ----------------------

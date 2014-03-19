@@ -2,10 +2,6 @@ name := "database"
 
 version := "0.1"
 
-organization := "com.loyal3"
-
-scalaVersion := "2.10.2"
-
 {
     libraryDependencies ++= Seq(
         "com.jolbox" % "bonecp" % "0.7.1.RELEASE" withSources(),

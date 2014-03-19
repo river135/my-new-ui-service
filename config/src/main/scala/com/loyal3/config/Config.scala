@@ -25,7 +25,7 @@ object Config {
   /**
    * Database properties
    */
-  val dbProperties = DBProperties(
+  val DbProperties = DBProperties(
     Properties.getStringProperty("database.host", "localhost").get,
     Properties.getStringProperty("database.name", "loyal3_service").get,
     Properties.getStringProperty("database.username", "root").get,

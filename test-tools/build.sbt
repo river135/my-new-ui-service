@@ -2,10 +2,6 @@ name := "test-tools"
 
 version := "0.1"
 
-organization := "com.loyal3"
-
-scalaVersion := "2.10.2"
-
 {
     libraryDependencies ++= Seq(
         "log4j" % "log4j" % "1.2.17",

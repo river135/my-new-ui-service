@@ -2,10 +2,6 @@ name := "web-service"
 
 version := "0.1"
 
-organization := "com.loyal3"
-
-scalaVersion := "2.10.2"
-
 resolvers += "Twitter Repo" at "http://maven.twttr.com/"
 
 {

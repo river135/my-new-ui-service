@@ -22,7 +22,7 @@ trait SampleSQLObject {
 /**
  * Sample database record maps to the case class
  */
-final class SampleRecord extends ResultSetMapper[Sample] {
+private final class SampleRecord extends ResultSetMapper[Sample] {
 
   def map(index: Int, resultSet: ResultSet, context: StatementContext): Sample = Sample(resultSet.getString("id"))
 
