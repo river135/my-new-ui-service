@@ -14,7 +14,13 @@ class EnvConfigTest
     "web.port",
     "web.documentRoot",
     "web.assetPath",
-    "admin.port"
+    "admin.port",
+    "database.host",
+    "database.name",
+    "database.username",
+    "database.password",
+    "database.min.connection",
+    "database.max.connection"
   ).sorted
 
   val Environments: List[String] = List("ci", "development", "staging", "production")

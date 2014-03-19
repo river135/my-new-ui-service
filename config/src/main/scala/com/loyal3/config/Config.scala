@@ -22,6 +22,18 @@ object Config {
    */
   val AdminServerPort = DynamicProperties.dynamicStringProperty("admin.port", ":9090").get
 
+  /**
+   * Database properties
+   */
+  val dbProperties = DBProperties(
+    Properties.getStringProperty("database.host", "localhost").get,
+    Properties.getStringProperty("database.name", "loyal3_service").get,
+    Properties.getStringProperty("database.username", "root").get,
+    Properties.getStringProperty("database.password", "password").get,
+    Properties.getIntProperty("database.min.connection", 2).get,
+    Properties.getIntProperty("database.max.connection", 11).get
+  )
+
   // do the Archaius Stuff based on our environment
   private def loadCascadedPropertiesFor(propertiesBaseName: String) {
     val environment: String = twitterConfig.env() // finatra environment property
@@ -33,3 +45,14 @@ object Config {
     ConfigurationManager.loadCascadedPropertiesFromResources(propertiesBaseName)
   }
 }
+
+case class DBProperties(host: String,
+                          database: String,
+                          username: String,
+                          password: String,
+                          minConnections: Int,
+                          maxConnections: Int) {
+
+  def url = "jdbc:mysql://%s:3306/%s" format(host, database)
+}
+
