@@ -110,7 +110,3 @@ performInstallationIfNecessary "`sudo phantomjs -v`" "PhantomJS" "sudo npm insta
 #---===[ Install all project dependencies based on bower.json
 cd web-ui/src/main/resources
 echo `bower install`
-
-#---===[ Generate IntelliJ Project
-cd $PROJ_DIR
-./generateIdeaProject.sh

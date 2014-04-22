@@ -14,14 +14,19 @@ object L3Build extends Build {
     testTools,
     database,
     databaseTests,
+WEB_UI_ONLY
     webUi,
     webUIIntegrationTests,
     webUIFunctionalTests,
+END_WEB_UI_ONLY
+WEB_SERVICE_ONLY
     webService,
     webServiceIntegrationTests,
     webServiceFunctionalTests
+END_WEB_SERVICE_ONLY
     )
 
+    
   lazy val config = Project(
     id   = "config",
     base = file("config"),
@@ -55,8 +60,7 @@ object L3Build extends Build {
   )
   .dependsOn(database % "test->compile;test->test;")
 
-  /************************ UI *****************************************/
-
+WEB_UI_ONLY
   lazy val webUi = Project(
     id   = "web-ui",
     base = file("web-ui"),
@@ -73,9 +77,9 @@ object L3Build extends Build {
     id = "web-ui-functional-tests",
     base = file("web-ui-functional-tests")
   )
+END_WEB_UI_ONLY
 
-  /************************ SERVICE *****************************************/
-
+WEB_SERVICE_ONLY
   lazy val webService = Project(
     id   = "web-service",
     base = file("web-service"),
@@ -92,7 +96,7 @@ object L3Build extends Build {
     id = "web-service-functional-tests",
     base = file("web-service-functional-tests")
   )
-
+END_WEB_SERVICE_ONLY
 
   /************************ Code Coverage *********************************************/
   lazy val projectSettings = Defaults.defaultSettings ++ Seq(ScctPlugin.instrumentSettings: _*) ++ Common.settings

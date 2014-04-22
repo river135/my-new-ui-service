@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# OPT DEFINITIONS
+#
+# Options are:
+#    -n : Name of service
+#    -t : Type of service
+UI_SERVICE_OPT="-t web-ui"
+WEBSERVICE_OPT="-t web-service"
+
+function readProjectName(){
+  echo -n "Enter your project name (1 word, underscores or dashes to separate): "
+  read projectName
+  if [ "$projectName" == "" ];
+  then
+    echo "Cannot Be Blank!"
+    echo
+    readProjectName
+  else
+    args+=" -n $projectName"
+  fi
+}
+
+echo "----====[ L3 SERVICE STARTER KIT: INSTALL SERVICE ]====----"
+echo
+echo "Select the type of service you would like to install:"
+echo
+typeOptions=("UI Microservice (Angular UI Included with a thin App Layer)" "Standard Microservice (No UI Included, simple Web Service")
+args=""
+select opt in "${typeOptions[@]}"; do
+    case $opt in
+        ${typeOptions[0]} ) args=$UI_SERVICE_OPT; break;;
+        ${typeOptions[1]} ) args=$WEBSERVICE_OPT; break;;
+        * ) echo; echo "UNKNOWN RESPONSE, exiting!!"; exit;;
+    esac
+done
+echo
+readProjectName
+runinstall="./tools/bin/setup $args"
+echo
+eval $runinstall

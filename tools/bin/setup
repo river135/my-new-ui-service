@@ -1,0 +1,86 @@
+#!/bin/bash
+
+#array contains check
+function arrayContainsElement () {
+  local e
+  for e in "${@:2}"
+    do [[ "$e" = "$1" ]] && return 1
+  done
+  return 0
+}
+
+#accepted values
+webUi="web-ui"
+webService="web-service"
+installTypes=($webUi $webService)
+
+echo
+while getopts "n:t:" arg
+  do
+    case "$arg" in
+      t)
+        installType=$OPTARG
+
+        #check if the value of install type is allowed
+        arrayContainsElement $installType "${installTypes[@]}"
+        validInstallType=$?
+
+        #exit the script if invalid install type
+        if [ $validInstallType -eq 0 ]
+          then
+            echo "This is not a valid install type, install failed, exiting."
+            exit
+        fi
+        ;;
+      n)
+        projectName=$OPTARG
+        ;;
+      ?)
+        echo "Unknown option $OPTARG"
+        ;;
+      :)
+        echo "No argument value for option $OPTARG"
+        ;;
+      *)
+        echo "Unknown error while processing"
+        ;;
+    esac
+  done
+
+#---===[ Ensures we have the option values we need (projectName and installType)
+if [ -z "$installType" ] || [ -z "$projectName" ]
+  then
+    echo "The setup script requires both a type option (-t) and a project name option (-n), run './go install' from the project root."
+    echo
+    exit
+fi
+
+#---===[ Output the parameters for clarity
+echo "Project Name: $projectName"
+echo "Install Type: $installType"
+echo
+
+#---===[ We have an install type and a project name, continue with installation
+case "$installType" in
+  $webUi)
+
+    echo "Checking your UI installations, may ask for sudo password."
+    ./tools/bin/ui-installation-check
+
+    echo "Moving pre-commit hooks over to the .git path."
+    ./tools/bin/pre-commit-hooks
+
+    echo "Creating L3Build.scala for web-ui service from template file."
+    ./tools/bin/create-sbt-build-file web-ui
+
+    echo
+    ;;
+  $webService)
+    echo "This will do all the necessary setup for a WebService"
+    echo
+    ;;
+  *)
+    #should never get here, we check for this above
+    echo "Unknown install type, must be either ui or webservice"
+    ;;
+esac

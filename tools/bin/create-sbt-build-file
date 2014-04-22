@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo;
+if [ -z "$1" ]
+  then
+    echo "Note sure what to remove, need to specify web-ui or web-service."
+  else
+    case $1 in
+      web-ui)
+        sed -f ./tools/sed/remove-web-service.sed ./project/L3Build.scala.template >> ./project/L3Build.scala
+        #rm ./project/L3Build.scala.template
+        git add ./project/.
+        ;;
+      web-service)
+        sed -f ./tools/sed/remove-web-ui.sed ./project/L3Build.scala.template >> ./project/L3Build.scala
+        #rm ./project/L3Build.scala.template
+        git add ./project/.
+        ;;
+      *)
+        echo "Unknown action, type './go help' for a list of actions."
+        ;;
+    esac
+fi
