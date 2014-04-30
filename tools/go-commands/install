@@ -8,25 +8,41 @@
 UI_SERVICE_OPT="-t web-ui"
 WEBSERVICE_OPT="-t web-service"
 
+# Variables
+#
+args=""
+githubuser=""
+projectname=""
+
 function readProjectName(){
   echo -n "Enter your project name (1 word, underscores or dashes to separate): "
-  read projectName
-  if [ "$projectName" == "" ];
-  then
-    echo "Cannot Be Blank!"
-    echo
-    readProjectName
-  else
-    args+=" -n $projectName"
-  fi
+  while [ "$projectname" == "" ]; do
+    read projectname
+    if [ "$projectname" == "" ]; then
+      echo -n "Can't be blank, try again: "
+    else
+      args+=" -n $projectname"
+    fi
+  done
+}
+
+function readGithubUserName(){
+  echo -n "Enter your github.com username (for git repo creation): "
+  while [ "$githubuser" == "" ]; do
+    read githubuser
+    if [ "$githubuser" == "" ]; then
+      echo -n "Can't be blank, try again: "
+    fi
+  done
 }
 
 echo "----====[ L3 SERVICE STARTER KIT: INSTALL SERVICE ]====----"
 echo
 echo "Select the type of service you would like to install:"
 echo
+
+#get the type of service being created
 typeOptions=("UI Microservice (Angular UI Included with a thin App Layer)" "Standard Microservice (No UI Included, simple Web Service")
-args=""
 select opt in "${typeOptions[@]}"; do
     case $opt in
         ${typeOptions[0]} ) args=$UI_SERVICE_OPT; break;;
@@ -35,7 +51,14 @@ select opt in "${typeOptions[@]}"; do
     esac
 done
 echo
+
+#Read Initial Project and User information
 readProjectName
-runinstall="./tools/bin/setup $args"
+readGithubUserName
+
+#create the remote repository on github
+./tools/bin/git-create $githubuser $projectname
+
+#Run the rest of the install
+#eval "./tools/bin/setup $args"
 echo
-eval $runinstall

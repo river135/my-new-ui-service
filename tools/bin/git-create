@@ -1,0 +1,55 @@
+#!/bin/sh
+
+ORGNAME="cgeheran-inc"
+username=$1
+reponame=$2
+
+github_json=$(cat <<_EOF_
+{\"name\":\"$reponame\",\"private\":false,\"auto_init\":true}
+_EOF_)
+
+test -z $username && echo "Username required." 1>&2 && exit 1
+test -z $reponame && echo "Repo name required." 1>&2 && exit 1
+
+#####
+# Adding the new repository based on project name and looking up orogin information from github response
+##
+echo -n "Setting up repository and reading new origin..."
+GITHUB_RESPONSE=$(eval curl -u $username https://api.github.com/orgs/$ORGNAME/repos -d \"$github_json\")
+echo
+github_origin=$(node -pe 'JSON.parse(process.argv[1]).clone_url' "$(echo $GITHUB_RESPONSE)")
+echo "Done!"
+echo
+
+#####
+# Removing the current origin pointer
+##
+echo -n "Removing current origin mapping..."
+git remote rm origin
+echo "removed."
+
+#####
+# Adding the new origin pointer for the new repo
+##
+echo -n "Adding $github_origin as the new origin..."
+git remote add origin $github_origin
+echo "added."
+echo
+
+####
+# Outputting Repository information
+##
+github_org=$(node -pe 'JSON.parse(process.argv[1]).organization.login' "$(echo $GITHUB_RESPONSE)")
+github_fullname=$(node -pe 'JSON.parse(process.argv[1]).full_name' "$(echo $GITHUB_RESPONSE)")
+github_html_url=$(node -pe 'JSON.parse(process.argv[1]).html_url' "$(echo $GITHUB_RESPONSE)")
+github_private=$(node -pe 'JSON.parse(process.argv[1]).private' "$(echo $GITHUB_RESPONSE)")
+
+echo "
+> New Repository Information:
+>   ORG Name  : $github_org
+>   Full Name : $github_fullname
+>   HTML URL  : $github_html_url
+>   Clone URL : $github_origin"
+echo
+echo
+

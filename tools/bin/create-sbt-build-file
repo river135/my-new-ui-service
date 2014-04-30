@@ -8,12 +8,14 @@ if [ -z "$1" ]
     case $1 in
       web-ui)
         sed -f ./tools/sed/remove-web-service.sed ./project/L3Build.scala.template >> ./project/L3Build.scala
-        #rm ./project/L3Build.scala.template
+        echo "rm ./project/L3Build.scala.template"
+        echo "rm -R web-service"
         git add ./project/.
         ;;
       web-service)
         sed -f ./tools/sed/remove-web-ui.sed ./project/L3Build.scala.template >> ./project/L3Build.scala
-        #rm ./project/L3Build.scala.template
+        echo "rm ./project/L3Build.scala.template"
+        echo "rm -R web-ui"
         git add ./project/.
         ;;
       *)
