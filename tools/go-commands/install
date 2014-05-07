@@ -60,5 +60,5 @@ readGithubUserName
 ./tools/bin/git-create $githubuser $projectname
 
 #Run the rest of the install
-#eval "./tools/bin/setup $args"
+eval "./tools/bin/setup $args"
 echo

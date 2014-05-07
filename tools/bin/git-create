@@ -53,3 +53,21 @@ echo "
 echo
 echo
 
+####
+# Pushing your new code to the new remote repo
+##
+function forcePushToOrigin(){
+  echo -n "About to push to your new origin ($github_origin), would you like to continue (yes/no): "
+    read answer
+    if [ "$answer" == "yes" ]; then
+      git push origin master -f
+      echo "Origin push is complete, you can now contiue developing your service."
+    else
+      echo "Exiting..."
+      exit
+    fi
+}
+
+forcePushToOrigin
+
+
